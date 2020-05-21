@@ -19,16 +19,26 @@ function Hotels() {
 
   return (
     <>
-      <h1>Hotels</h1>
-      <div className="row">
+      <h1>Welcome to holidaze!</h1>
+      <div>
         {hotels.map((list) => {
           return (
             <>
-              <div className="col-sm-3">
-                <h2 key={list.id}>
-                  {list.name}
-                </h2>
-                <img src={list.image} width="300px" />
+              <div className="row" key={list.id}>
+                <div className="col-sm-6">
+                  <h2>
+                    {list.name}
+                  </h2>
+                  <p>
+                    {list.description}
+                  </p>
+                  <p>
+                    Prices from: <b>{list.price},- </b>
+                  </p>
+                </div>
+                <div className="col-sm-6">
+                  <img className="col" src={list.image} />
+                </div>
               </div>
             </>
           );
