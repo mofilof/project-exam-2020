@@ -1,16 +1,14 @@
 import React from 'react';
-import HotelList from './HotelList.js';
+import SearchHotels from './SearchHotels';
+import HotelList from './HotelList';
 
 function Home() {
-  function te() {
-    console.log("Hello? 123");
-  }
-  te();
   return (
     <>
-      <h1>hei</h1>
+      <h6>Home.js</h6>
+      <SearchHotels />
+      <HotelList />
 
-      <HotelList></HotelList>
     </>
   );
 
