@@ -1,8 +1,8 @@
 import React from 'react';
-//import { Route, Redirect, NavLink } from "react-router-dom";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Home from '../../components/home/Home';
+import SearchHotels from '../../components/home/SearchHotels';
 
 
 //Menu
@@ -12,11 +12,13 @@ function Menu() {
       <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Collapse id="basic-navbar-nav">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Nav className="mr-auto">
+          <Nav className="d-flex flex-row-reverse">
             <Nav.Link href="/home" >Home</Nav.Link>
+            <Nav.Link href="/hotels" >Hotels</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        <SearchHotels />
       </Navbar>
 
       <Home></Home>
@@ -28,4 +30,4 @@ function Menu() {
 
 export default Menu;
 
-
+//Under SearchHotels, make a button that onclick displays result, it may solve the display search issue??
