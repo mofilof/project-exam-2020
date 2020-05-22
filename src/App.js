@@ -13,7 +13,9 @@ function App() {
   return (
     <>
       <Menu />
-      <h6>App.js</h6>
+      <main>
+        <h6>App.js</h6>
+      </main>
 
       <div>
         <Router>

@@ -62,6 +62,7 @@ function Hotels() {
 
 return (
   <>
+    <main>
     <h6>HotelList.js.js</h6>
     <h1>Welcome to holidaze!</h1>
     <div>
@@ -91,6 +92,7 @@ return (
         );
       })}
     </div>
+    </main>
   </>
 );
 }

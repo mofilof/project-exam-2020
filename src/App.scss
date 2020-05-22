@@ -2,7 +2,11 @@
 @import "partials/_color.scss";
 @import "partials/_text.scss";
 
-h6{
-  color: $orange;
+body{
+  background-color: $orange;
+}
+
+main{
+  margin: 2% 10% 2% 10%;
 }
 
