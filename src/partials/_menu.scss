@@ -1,6 +1,44 @@
-.menu-color{
-  background-color: $blue;
+div{
+  text-decoration: none;
+  color: $white;
+  .colorM{
+    background-color: $blue;
+    text-decoration: none;
+    div{
+      font-family: $worksans;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    #home:hover{
+      color: $white;
+      text-decoration: underline;
+    }
+    #hotels:hover{
+      color: $white;
+      text-decoration: underline;
+    }
+    #contact:hover{
+      color: $white;
+      text-decoration: underline;
+    }
+    #home:active{
+      text-decoration: underline;
+      color: $orange;
+    }
+    #hotels:active{
+      text-decoration: underline;
+      color: $orange;
+    }
+    #contact:active{
+      text-decoration: underline;
+      color: $orange;
+    }
+  }
 }
+
+
+
+
 
 /*
 

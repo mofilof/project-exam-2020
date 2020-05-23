@@ -12,21 +12,23 @@ import Menu from './components/nav/Menu';
 function App() {
   return (
     <>
-      <Menu />
-      <main>
-        <h6>App.js</h6>
-      </main>
+      <body className="bodycolor">
+        <Menu />
+        <main>
+          <h6>App.js</h6>
+        </main>
 
-      <div>
-        <Router>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/home" component={Home} />
-            <Route path="/hotels" component={HotelList} />
-            <Route path="/contact" component={Contact} />
-          </Switch>
-        </Router>
-      </div>
+        <div>
+          <Router>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/home" component={Home} />
+              <Route path="/hotels" component={HotelList} />
+              <Route path="/contact" component={Contact} />
+            </Switch>
+          </Router>
+        </div>
+      </body>
 
     </>
   );

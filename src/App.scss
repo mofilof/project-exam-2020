@@ -1,12 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
 @import "partials/_color.scss";
 @import "partials/_text.scss";
+@import "partials/_menu.scss";
 
-body{
-  background-color: $orange;
-}
+
 
 main{
-  margin: 2% 10% 2% 10%;
+  margin: 0 10%;
+  background-color: $white;
+  min-height: 100%;
+  padding: 2% 4%;
 }
 
+.bodycolor{
+  background-color: $orange;
+}

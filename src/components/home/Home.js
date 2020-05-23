@@ -4,9 +4,11 @@ function Home() {
   return (
     <>
 
-      <main>
-        <h6>Home.js</h6>
-      </main>
+      <body className="bodycolor">
+        <main>
+          <h6>Home.js</h6>
+        </main>
+      </body>
 
     </>
   );

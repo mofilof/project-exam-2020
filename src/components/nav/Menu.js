@@ -9,19 +9,20 @@ import SearchHotels from '../../components/home/SearchHotels';
 function Menu() {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <div className="colorM">
+        <Navbar>
+          <Navbar.Collapse id="basic-navbar-nav">
 
-          <Nav className="d-flex flex-row-reverse">
-            <Nav.Link href="/home" >Home</Nav.Link>
-            <Nav.Link href="/hotels" >Hotels</Nav.Link>
-            <Nav.Link href="/contact">Contact</Nav.Link>
-          </Nav>
+            <Nav>
+              <Nav.Link href="/home"><div id="home">HOME</div></Nav.Link>
+              <Nav.Link href="/hotels"><div id="hotels">HOTELS</div></Nav.Link>
+              <Nav.Link href="/contact"><div id="contact">CONTACT</div></Nav.Link>
+            </Nav>
 
-        </Navbar.Collapse>
-        <SearchHotels />
-      </Navbar>
+          </Navbar.Collapse>
+          <SearchHotels />
+        </Navbar>
+      </div>
     </>
   );
 }
