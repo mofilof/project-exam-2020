@@ -8,10 +8,13 @@
 main{
   margin: 0 10%;
   background-color: $white;
-  min-height: 100%;
   padding: 2% 4%;
 }
 
 .bodycolor{
   background-color: $orange;
+}
+
+body{
+  min-height: 900px;
 }

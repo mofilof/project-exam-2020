@@ -21,6 +21,7 @@ function Menu() {
 
           </Navbar.Collapse>
           <SearchHotels />
+
         </Navbar>
       </div>
     </>
