@@ -2,13 +2,14 @@
 @import "partials/_color.scss";
 @import "partials/_text.scss";
 @import "partials/_menu.scss";
-
+@import "partials/_buttons.scss";
 
 
 main{
   margin: 0 10%;
   background-color: $white;
   padding: 2% 4%;
+  border: solid 3px $blue;
 }
 
 .bodycolor{

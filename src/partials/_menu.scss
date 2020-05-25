@@ -37,26 +37,28 @@ div{
 }
 
 
-
-
-
-/*
-
-nav{ //Bakgrunnsfargen til menyen
-  background-color: $darkBlue; 
-}
-.navbar-light .navbar-brand{ //Fargen til brand/logo i menyen
-  color: $white;
-  font-family: $iceland;
-}
-.navbar-light .navbar-nav .nav-link { //Tekstfargen i menyen
-  color: $white;
-  font-family: $iceland;
+.searchbar{
+  color: $blue;
+  border: solid 1px $blue;
+  background-color: $white;
+  font-family: $worksans;
 }
 
-.navbar-light .navbar-brand:hover{ //Hover brand/logo
-  color: $lightBlue;
-  font-family: $iceland;
+.searchbar:active{
+  color: $black;
+  border: solid 1px $orange;
+  font-weight: 600;
 }
 
-*/
+
+.search{
+  color: $blue;
+  border: solid 1px $blue;
+  background-color: $white;
+  font-family: $worksans;
+}
+
+.search:hover{
+  color: $orange;
+  border: solid 1px $orange;
+}

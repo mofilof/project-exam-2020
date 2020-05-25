@@ -4,20 +4,20 @@ import PropTypes from "prop-types";
 function SearchHotels({ doSearch }) {
   return (
     <>
-      <input className="searchBar"
+      <input className="searchbar"
         placeholder="Search for hotels..."
         onChange={function (e) {
           console.log(e.target.value);
           doSearch(e.target.value);
         }}
       />
-      <button>Search</button>
+      <button className="search">Search</button>
     </>
   );
 }
 
-/*SearchHotels.propTypes = {
+SearchHotels.propTypes = {
   doSearch: PropTypes.func.isRequired
-};*/
+};
 
 export default SearchHotels;

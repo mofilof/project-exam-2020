@@ -1,0 +1,11 @@
+.search{
+  color: $blue;
+  border: solid 1px $blue;
+  background-color: $white;
+}
+
+.search:hover{
+  color: $orange;
+  border: solid 1px $orange;
+  background-color: $white;
+}
