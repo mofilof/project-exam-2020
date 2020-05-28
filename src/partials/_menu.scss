@@ -44,13 +44,6 @@ div{
   font-family: $worksans;
 }
 
-.searchbar:active{
-  color: $black;
-  border: solid 1px $orange;
-  font-weight: 600;
-}
-
-
 .search{
   color: $blue;
   border: solid 1px $blue;
@@ -62,3 +55,9 @@ div{
   color: $orange;
   border: solid 1px $orange;
 }
+.search:active{
+  color: $orange;
+  border: solid 1px $orange;
+  text-decoration: underline;
+}
+
