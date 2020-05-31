@@ -17,6 +17,7 @@ function Menu() {
               <Nav.Link href="/home"><div id="home">HOME</div></Nav.Link>
               <Nav.Link href="/hotels"><div id="hotels">HOTELS</div></Nav.Link>
               <Nav.Link href="/contact"><div id="contact">CONTACT</div></Nav.Link>
+              <Nav.Link href="/login"><div id="login">LOGIN</div></Nav.Link>
             </Nav>
 
           </Navbar.Collapse>
