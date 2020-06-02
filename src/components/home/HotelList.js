@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BASE_URL, headers } from "../../constant/Api";
-import SearchHotels from './SearchHotels';
+import SearchHotels from '../hotels/SearchHotels';
 
 function Hotels() {
   const [hotels, setHotels] = useState([]);

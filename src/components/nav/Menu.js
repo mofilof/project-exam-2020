@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Home from '../../components/home/Home';
-import SearchHotels from '../../components/home/SearchHotels';
+import SearchHotels from '../hotels/SearchHotels';
 
 
 //Menu
