@@ -4,6 +4,10 @@ import Nav from 'react-bootstrap/Nav';
 //import Home from '../../components/home/Home';
 import SearchHotels from '../hotels/SearchHotels';
 
+//forslag til noe å forsøke mtp login og admin:
+//if (submitted = true) bruk meny med local storage value
+//else... bruk standard menyen 
+
 
 //Menu
 function Menu() {

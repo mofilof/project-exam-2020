@@ -17,10 +17,6 @@ function App() {
     <>
       <body className="bodycolor">
         <Menu />
-        <main>
-          <h6>App.js</h6>
-        </main>
-
         <div>
           <Router>
             <Switch>

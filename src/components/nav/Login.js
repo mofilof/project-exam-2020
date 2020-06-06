@@ -26,14 +26,16 @@ const Login = () => {
 
   return (
     <>
-      <div>
-        <h1>Login</h1>
-        <input value={nameValue} onChange={onChange} placeholder="Username" type="text" />
-        <input placeholder="Password" value={password} onChange={onChangePassword} type="password" />
-        <Button id="loginButton" type="submit" onClick={submitted}>
-          Login
-                </Button>
-      </div>
+      <main>
+        <div>
+          <h1>Login</h1>
+          <input value={nameValue} onChange={onChange} placeholder="Username" type="text" />
+          <input placeholder="Password" value={password} onChange={onChangePassword} type="password" />
+          <Button id="loginButton" type="submit" onClick={submitted}>
+            Login</Button>
+        </div>
+      </main>
+
     </>
   );
 };

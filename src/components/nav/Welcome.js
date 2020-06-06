@@ -7,6 +7,7 @@ function Welcome() {
   return (
     <main>
       <h1>Welcome {username}</h1>
+
     </main>
   )
 }

@@ -9,9 +9,9 @@ const schema = yup.object().shape({
     .string()
     .email("Enter valid email.")
     .required("We need your email."),
-  textMessage: yup.string().required("Ops, you forgot to write a message.")
-    .min(10, "Minimum ten characters.")
-    .max(100, "Maximum 100 characters."),
+  textMessage: yup.string().required("Ops, that message is to short.")
+    .min(2, "Minimum two characters.")
+    .max(100, "Maximun 100 characters."),
 });
 
 function Contact() {
@@ -21,6 +21,7 @@ function Contact() {
 
   function onSubmit(data) {
     console.log("data", data);
+
   }
 
   return (
@@ -34,7 +35,7 @@ function Contact() {
           <input className="col" name="email" placeholder="Email" ref={register()} />
           {errors.email && <p className="contactError">{errors.email.message}</p>}
 
-          <input className="messageArea col" name="textMsessage" placeholder="Message" ref={register()} />
+          <input className="messageArea col" name="textMessage" placeholder="Message" ref={register()} />
           {errors.textMessage && <p className="contactError">{errors.textMessage.message}</p>}
 
           <input className="col" className="submitInput" type="submit" />
