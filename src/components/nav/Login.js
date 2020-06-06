@@ -20,6 +20,7 @@ const Login = () => {
     console.log("form submitted");
     localStorage.setItem("username", nameValue);
     localStorage.setItem("password", password);
+    window.location.href = '/welcome';
 
   }
 
