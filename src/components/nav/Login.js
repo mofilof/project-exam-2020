@@ -1,67 +1,41 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useRef } from "react";
+import { useForm, usestate } from "react-hook-form";
 import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
-
-/*
-function Login() {
-  const { register, handleSubmit } = useForm();
-
-  function onSubmit(data) {
-    console.log("data", data);
-  }
-*/
+//import Form from "react-bootstrap/Form";
+//import { Link } from "react-router-dom";
 
 const Login = () => {
-  //EXAMPLE
-  const [nameValue, setNameValue] = React.useState('');
-  const onChange = event => setNameValue(event.target.value);
-  //
-  const [usernameValue, setUsernameValue] = React.useState('');
-  const rememberValue = event => setNameValue(event.target.value);
+  const [nameValue, setNameValue] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
-  //WHY CAN'T I TYPE SOMETHING IN THE INPUT I USE THE ONSUBMIT?
-  //THE onChange WORKS FINE...
-
-  const loginbtn = document.getElementById('loginButton');
-  const klikk = loginbtn.onclick;
-  function submitted() {
-    if (klikk = true) {
-      onSubmit{ rememberValue }
-    }
+  const onChange = (event) => {
+    setNameValue(event.target.value);
   };
 
+  const onChangePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
+  function submitted() {
+    console.log("form submitted");
+    localStorage.setItem("username", nameValue);
+    localStorage.setItem("password", password);
+
+  }
 
   return (
     <>
-      //EXAMPLE
-      <div>
-        <h1>Hello React with Local Storage!</h1>
-        <input value={nameValue} type="text" onChange={onChange} />
-        <p>{nameValue}</p>
-      </div>
-      //
       <div>
         <h1>Login</h1>
-
-        <input value={usernameValue} placeholder="Username" type="text" />
-
-        <input placeholder="Password" type="password" />
-
-        <Button id="loginButton" type="submit">Login</Button>
-
-
-
-
+        <input value={nameValue} onChange={onChange} placeholder="Username" type="text" />
+        <input placeholder="Password" value={password} onChange={onChangePassword} type="password" />
+        <Button id="loginButton" type="submit" onClick={submitted}>
+          Login
+                </Button>
       </div>
-
     </>
-
   );
-  submitted();
 };
-
 
 export default Login;
 

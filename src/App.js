@@ -10,6 +10,7 @@ import Login from './components/nav/Login';
 import Admin from './components/nav/Admin';
 //import HotelList from './components/home/HotelList';
 //import SearchHotels from './components/home/SearchHotels';
+import Welcome from './components/nav/Welcome';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path="/contact" component={Contact} />
               <Route path="/admin" component={Admin} />
               <Route path="/login" component={Login} />
+              <Route path="/welcome" component={Welcome} />
             </Switch>
           </Router>
         </div>

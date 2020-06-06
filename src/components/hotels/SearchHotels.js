@@ -9,9 +9,9 @@ function SearchHotels({ doSearch }) {
     <>
       <input className="searchbar" placeholder="Search hotels..." />
 
-      <button onClick={function (hotelResult) {
-        console.log(hotelResult.target.value);
-        doSearch(hotelResult.target.value);
+      <button onClick={function (handleSearch) {
+        console.log(handleSearch.target.value);
+        doSearch(handleSearch.target.value);
       }} id="searchresult" className="search">Search2.0</button>
 
     </>
