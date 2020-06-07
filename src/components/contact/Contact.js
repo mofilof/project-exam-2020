@@ -1,6 +1,7 @@
 import React from "react";
-import { useForm, useState } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import Button from "react-bootstrap/Button";
 //import Form from "react-bootstrap/Form";
 
 const schema = yup.object().shape({
@@ -24,29 +25,48 @@ function Contact() {
   const [formEmail, setformEmailValue] = React.useState("");
   const [formText, setformTextValue] = React.useState("");
 
+  const setNameValues = (event) => {
+    setformNameValue(event.target.value);
+  }
+  const setEmailValues = (event) => {
+    setformEmailValue(event.target.value);
+  }
+  const setTextValues = (event) => {
+    setformTextValue(event.target.value);
+  }
+
+
   function onSubmit(data) {
     console.log("data", data);
+    window.location.href = '/success';
+  }
+
+  function submitFormData() {
     localStorage.setItem('formName', formName);
     localStorage.setItem('formEmail', formEmail);
     localStorage.setItem('formText', formText);
-    window.location.href = '/success';
   }
+
+
 
   return (
     <>
       <main>
         <form className="col-sm-4" onSubmit={handleSubmit(onSubmit)}>
 
-          <input value={formName} className="col" name="fullName" placeholder="Full name" ref={register()} />
+          <input value={formName} onChange={setNameValues}
+            className="col" name="fullName" placeholder="Full name" ref={register()} />
           {errors.fullName && <p className="contactError">{errors.fullName.message}</p>}
 
-          <input value={formEmail} className="col" name="email" placeholder="Email" ref={register()} />
+          <input value={formEmail} onChange={setEmailValues}
+            className="col" name="email" placeholder="Email" ref={register()} />
           {errors.email && <p className="contactError">{errors.email.message}</p>}
 
-          <input value={formText} className="messageArea col" name="textMessage" placeholder="Message" ref={register()} />
+          <input value={formText} onChange={setTextValues}
+            className="messageArea col" name="textMessage" placeholder="Message" ref={register()} />
           {errors.textMessage && <p className="contactError">{errors.textMessage.message}</p>}
 
-          <input className="col" className="submitInput" type="submit" />
+          <Button className="col" className="submitInput" type="submit" onClick={submitFormData}>Send</Button>
         </form>
 
       </main>
