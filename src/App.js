@@ -12,6 +12,8 @@ import Admin from './components/nav/Admin';
 //import SearchHotels from './components/home/SearchHotels';
 import Welcome from './components/nav/Welcome';
 import AdminUser from './components/nav/AdminUser';
+import ContactData from './components/contact/ContactData';
+import Success from './components/contact/Success';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
               <Route path="/login" component={Login} />
               <Route path="/welcome" component={Welcome} />
               <Route path="/adminuser" component={AdminUser} />
+              <Route path="/contactdata" component={ContactData} />
+              <Route path="/success" component={Success} />
             </Switch>
           </Router>
         </div>
