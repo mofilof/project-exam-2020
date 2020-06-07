@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 //import Home from '../../components/home/Home';
-import SearchHotels from '../hotels/SearchHotels';
+//import SearchHotels from '../hotels/SearchHotels';
 
 //forslag til noe å forsøke mtp login og admin:
 //if (submitted = true) bruk meny med local storage value
@@ -25,7 +25,7 @@ function Menu() {
             </Nav>
 
           </Navbar.Collapse>
-          <SearchHotels />
+
 
         </Navbar>
       </div>

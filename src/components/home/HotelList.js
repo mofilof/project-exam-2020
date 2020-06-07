@@ -21,7 +21,7 @@ function Hotels() {
   }, []);
 
   function handleSearch(inputValue) {
-    console.log("input", inputValue);
+    console.log("Inputvalue: ", inputValue);
 
     const lowerCaseInput = inputValue.toLowerCase();
 
@@ -54,7 +54,9 @@ function Hotels() {
                     <h2>{hotel.name}</h2>
                     <p>{hotel.description}</p>
                     <p>
-                      <b>Guest capasity:</b> {hotel.name} has room for {hotel.maxGuests} guests.
+                      <b>Guest capasity:</b>
+                      {hotel.name} has room for
+                      {hotel.maxGuests} guests.
                                         </p>
                     <p>
                       Prices from: <b>{hotel.price},- </b>

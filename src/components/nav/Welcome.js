@@ -1,8 +1,7 @@
 import React from "react";
-import Login from './Login';
 
 function Welcome() {
-  var username = localStorage.getItem('username');
+  const username = localStorage.getItem('username');
 
   return (
     <main>

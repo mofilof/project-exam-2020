@@ -11,6 +11,7 @@ import Admin from './components/nav/Admin';
 //import HotelList from './components/home/HotelList';
 //import SearchHotels from './components/home/SearchHotels';
 import Welcome from './components/nav/Welcome';
+import AdminUser from './components/nav/AdminUser';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/admin" component={Admin} />
               <Route path="/login" component={Login} />
               <Route path="/welcome" component={Welcome} />
+              <Route path="/adminuser" component={AdminUser} />
             </Switch>
           </Router>
         </div>

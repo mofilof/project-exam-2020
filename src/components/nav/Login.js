@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import { useForm, usestate } from "react-hook-form";
+//import { useForm, usestate } from "react-hook-form";
 import Button from "react-bootstrap/Button";
 //import Form from "react-bootstrap/Form";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [nameValue, setNameValue] = React.useState("");
@@ -34,6 +34,11 @@ const Login = () => {
           <Button id="loginButton" type="submit" onClick={submitted}>
             Login</Button>
         </div>
+
+        <Link to={'/admin'}>
+          <Button>Go to admin login</Button>
+        </Link>
+
       </main>
 
     </>
