@@ -8,6 +8,9 @@ function AdminUser() {
   const formEmail = localStorage.getItem('formEmail');
   const formText = localStorage.getItem('formText');
 
+  /*Use sessionStorage? Store the form during the session */
+  /*Is it possible to use sessionStorage to store and delete forms during the session? Perhaps also a possible solution for the booking page?? */
+
   return (
     <main>
       <h1>Welcome {user}</h1>
