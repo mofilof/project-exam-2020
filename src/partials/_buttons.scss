@@ -3,9 +3,32 @@
   border: solid 1px $blue;
   background-color: $white;
 }
-
 .search:hover{
   color: $orange;
   border: solid 1px $orange;
   background-color: $white;
+}
+
+
+.mybtn{
+  color: $white;
+  border: solid 2px $orange;
+  background-color: $orange; 
+}
+.mybtn:hover{
+  color: $orange;
+  border: solid 2px $orange;
+  background-color: $white;
+}
+
+
+.adminbtn{
+  color: $orange;
+  border: solid 2px $orange;
+  background-color: $white; 
+}
+.adminbtn:hover{
+  color: $blue;
+  border: solid 2px $blue;
+  text-decoration: underline; 
 }

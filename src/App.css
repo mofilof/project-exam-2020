@@ -1,17 +1,141 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "~bootstrap/scss/bootstrap";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   app.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"~bootstrap/scss/bootstrap\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   app.scss 1:9  root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+h1, h2, h3, h4, h5, h6, p {
+  font-family: "Work Sans", sans-serif;
+  color: #0077a4;
 }
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+p {
+  font-size: 0.8em;
+}
+
+div {
+  text-decoration: none;
+  color: #ffffff;
+}
+div .colorM {
+  background-color: #0077a4;
+  text-decoration: none;
+}
+div .colorM div {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+}
+div .colorM #home:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+div .colorM #hotels:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+div .colorM #contact:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+div .colorM #home:active {
+  text-decoration: underline;
+  color: #e88c27;
+}
+div .colorM #hotels:active {
+  text-decoration: underline;
+  color: #e88c27;
+}
+div .colorM #contact:active {
+  text-decoration: underline;
+  color: #e88c27;
+}
+
+.searchbar {
+  color: #0077a4;
+  border: solid 1px #0077a4;
+  background-color: #ffffff;
+  font-family: "Work Sans", sans-serif;
+}
+
+.search {
+  color: #0077a4;
+  border: solid 1px #0077a4;
+  background-color: #ffffff;
+  font-family: "Work Sans", sans-serif;
+}
+
+.search:hover {
+  color: #e88c27;
+  border: solid 1px #e88c27;
+}
+
+.search:active {
+  color: #e88c27;
+  border: solid 1px #e88c27;
+  text-decoration: underline;
+}
+
+.search {
+  color: #0077a4;
+  border: solid 1px #0077a4;
+  background-color: #ffffff;
+}
+
+.search:hover {
+  color: #e88c27;
+  border: solid 1px #e88c27;
+  background-color: #ffffff;
+}
+
+.mybtn {
+  color: #ffffff;
+  border: solid 2px #e88c27;
+  background-color: #e88c27;
+}
+
+.mybtn:hover {
+  color: #e88c27;
+  border: solid 2px #e88c27;
+  background-color: #ffffff;
+}
+
+.adminbtn {
+  color: #e88c27;
+  border: solid 2px #e88c27;
+  background-color: #ffffff;
+}
+
+.adminbtn:hover {
+  color: #0077a4;
+  border: solid 2px #0077a4;
+  text-decoration: underline;
+}
+
+main {
+  margin: 0 10%;
+  background-color: #ffffff;
+  padding: 2% 4%;
+  border: solid 3px #0077a4;
+}
+
+.bodycolor {
+  background-color: #e88c27;
+}
+
+body {
+  min-height: 900px;
+}
+
+/*# sourceMappingURL=App.css.map */

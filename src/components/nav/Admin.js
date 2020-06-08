@@ -32,12 +32,12 @@ const Admin = () => {
           <h1>Login for Admin users</h1>
           <input value={adminUser} onChange={onUser} placeholder="Admin username" type="text" />
           <input placeholder="Password" value={adminPassword} onChange={onPassword} type="password" />
-          <Button id="loginButton" type="submit" onClick={adminSubmit}>
-            Login</Button>
+          <button id="loginButton" className="mybtn" type="submit" onClick={adminSubmit}>
+            Login</button>
         </div>
 
-        <Link to={'/loin'}>
-          <Button>Back to login</Button>
+        <Link to={'/login'}>
+          <button className="adminbtn">Back to login</button>
         </Link>
 
       </main>

@@ -31,12 +31,12 @@ const Login = () => {
           <h1>Login</h1>
           <input value={nameValue} onChange={onChange} placeholder="Username" type="text" />
           <input placeholder="Password" value={password} onChange={onChangePassword} type="password" />
-          <Button id="loginButton" type="submit" onClick={submitted}>
-            Login</Button>
+          <button id="loginButton" className="mybtn" type="submit" onClick={submitted}>
+            Login</button>
         </div>
 
         <Link to={'/admin'}>
-          <Button>Go to admin login</Button>
+          <button className="adminbtn">Go to admin login</button>
         </Link>
 
       </main>

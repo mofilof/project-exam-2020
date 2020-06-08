@@ -52,7 +52,7 @@ function Contact() {
   return (
     <>
       <main>
-        <form className="col-sm-4" onSubmit={handleSubmit(onSubmit)}>
+        <form className="col-sm-6" onSubmit={handleSubmit(onSubmit)}>
 
           <input value={formName} onChange={setNameValues}
             className="col" name="fullName" placeholder="Full name" ref={register()} />
