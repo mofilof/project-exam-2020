@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import Button from "react-bootstrap/Button";
+//import Button from "react-bootstrap/Button";
 //import Form from "react-bootstrap/Form";
 
 const schema = yup.object().shape({
@@ -66,7 +66,7 @@ function Contact() {
             className="messageArea col" name="textMessage" placeholder="Message" ref={register()} />
           {errors.textMessage && <p className="contactError">{errors.textMessage.message}</p>}
 
-          <button className="col submitInput mybtn" type="submit" onClick={submitFormData}>Send</button>
+          <button className="col mybtn" type="submit" onClick={submitFormData}>Send</button>
         </form>
 
       </main>

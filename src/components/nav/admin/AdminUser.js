@@ -7,16 +7,9 @@ function AdminUser() {
   const formEmail = sessionStorage.getItem('formEmail');
   const formText = sessionStorage.getItem('formText');
 
-  const formResults = [formName, formEmail, formText];
+  const formResults = [<b>Name: </b>, formName,
+  <b>Email: </b>, formEmail, <b>Message: </b>, formText];
   console.log(formResults);
-
-  /*
-  <button onclick="myFunction()">Try it</button>
-    function myFunction() {
-      var para = document.createElement("P");
-      para.innerHTML = "This is a paragraph.";
-      document.getElementById("myDIV").appendChild(para);
-    } */
 
   return (
     <main>
@@ -29,12 +22,16 @@ function AdminUser() {
         {formResults.map((contact, messages) => {
           return (
 
-            <div key={messages}>
-              <p>{contact}</p>
-            </div>
-          )
+            <>
+              <div key={messages}>
+                <p>{contact}</p>
+              </div>
+            </>)
+
         })}
       </div>
+
+
     </main>
   )
 }

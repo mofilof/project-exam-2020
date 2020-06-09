@@ -8,7 +8,7 @@ import Contact from './components/contact/Contact';
 import Menu from './components/nav/Menu';
 import Login from './components/nav/Login';
 import Admin from './components/nav/admin/Admin';
-//import HotelList from './components/home/HotelList';
+import HotelResult from './components/hotels/HotelResult';
 //import SearchHotels from './components/home/SearchHotels';
 import Welcome from './components/nav/Welcome';
 import AdminUser from './components/nav/admin/AdminUser';
@@ -25,6 +25,7 @@ function App() {
               <Route path="/" exact component={Home} />
               <Route path="/home" component={Home} />
               <Route path="/hotels" component={HotelList} />
+              <Route path="/booking" component={HotelResult} />
               <Route path="/contact" component={Contact} />
               <Route path="/admin" component={Admin} />
               <Route path="/login" component={Login} />

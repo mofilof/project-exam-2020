@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Success() {
   return (
     <main>
-      <h1>Thank you for your message!</h1>
+      <h1>Have a nice day!</h1>
     </main>
   )
 }
