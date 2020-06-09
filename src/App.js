@@ -7,12 +7,11 @@ import HotelList from './components/home/HotelList';
 import Contact from './components/contact/Contact';
 import Menu from './components/nav/Menu';
 import Login from './components/nav/Login';
-import Admin from './components/nav/Admin';
+import Admin from './components/nav/admin/Admin';
 //import HotelList from './components/home/HotelList';
 //import SearchHotels from './components/home/SearchHotels';
 import Welcome from './components/nav/Welcome';
-import AdminUser from './components/nav/AdminUser';
-//import ContactData from './components/contact/ContactData';
+import AdminUser from './components/nav/admin/AdminUser';
 import Success from './components/contact/Success';
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
               <Route path="/login" component={Login} />
               <Route path="/welcome" component={Welcome} />
               <Route path="/adminuser" component={AdminUser} />
-              {/*<Route path="/contactdata" component={ContactData} />*/}
               <Route path="/success" component={Success} />
             </Switch>
           </Router>

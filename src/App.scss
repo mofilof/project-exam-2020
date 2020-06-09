@@ -19,3 +19,9 @@ main{
 body{
   min-height: 900px;
 }
+
+.frame{
+  margin: 1em 0;
+  padding: 1em;
+  border: solid 3px $blue;
+}

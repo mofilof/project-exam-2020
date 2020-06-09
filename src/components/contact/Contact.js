@@ -42,9 +42,9 @@ function Contact() {
   }
 
   function submitFormData() {
-    localStorage.setItem('formName', formName);
-    localStorage.setItem('formEmail', formEmail);
-    localStorage.setItem('formText', formText);
+    sessionStorage.setItem('formName', formName);
+    sessionStorage.setItem('formEmail', formEmail);
+    sessionStorage.setItem('formText', formText);
   }
 
 
@@ -66,7 +66,7 @@ function Contact() {
             className="messageArea col" name="textMessage" placeholder="Message" ref={register()} />
           {errors.textMessage && <p className="contactError">{errors.textMessage.message}</p>}
 
-          <Button className="col" className="submitInput" type="submit" onClick={submitFormData}>Send</Button>
+          <button className="col submitInput mybtn" type="submit" onClick={submitFormData}>Send</button>
         </form>
 
       </main>

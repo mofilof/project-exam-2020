@@ -1,9 +1,8 @@
 import React from "react";
-//import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Button from "react-bootstrap/Button";
-//import Form from "react-bootstrap/Form";
+import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
-
 
 const Admin = () => {
   const [adminUser, setAdminUser] = React.useState("");
@@ -48,13 +47,18 @@ const Admin = () => {
 
 export default Admin;
 
-
 /*
+
+import { useHistory } from "react-router-dom";
+
 function Admin() {
   const { register, handleSubmit } = useForm();
 
+  let thedata = useHistory();
+
   function onSubmit(data) {
     console.log("data", data);
+    thedata.push("/adminuser")
     window.location.href = '/adminuser';
   }
 
@@ -73,7 +77,7 @@ function Admin() {
             <Form.Control name="password" placeholder="Password" ref={register} />
           </Form.Group>
 
-          <Button type="submit">Login</Button>
+          <button className="adminbtn" type="submit">Login</button>
         </Form>
       </main>
 
