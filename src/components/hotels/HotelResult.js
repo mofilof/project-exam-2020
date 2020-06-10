@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { BASE_URL, headers } from "../../constant/Api";
+import { useParams } from "react-router-dom";
+
 //import { useForm } from "react-hook-form";
 //import * as yup from "yup";
 
@@ -20,6 +23,29 @@ function HotelResult() {
   /*   const { register, handleSubmit, errors } = useForm({
       validationSchema: schema
     }); */
+
+
+  //To get the hotel specifics
+  const [hotels, setHotels] = useState([]);
+
+
+  const { id } = useParams();
+
+  const book = BASE_URL + "establishments" + '/' + id;
+  const options = { headers };
+
+  useEffect(() => {
+    fetch(book, options)
+      .then((response) => response.json())
+      .then((json) => {
+        console.log('Mona vil sove');
+        console.table(json);
+        setHotels(json);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  //
 
 
   const [rooms, setRooms] = React.useState("");
@@ -272,13 +298,20 @@ function HotelResult() {
 
           <div className="col">
 
+            <h1>hellå {hotels.name}</h1>
+            <div>{hotels.id}</div>
+
           </div>
 
         </div>
 
       </main>
     </>
-  );
-}
+
+
+  )
+};
+
+
 
 export default HotelResult;

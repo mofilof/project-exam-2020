@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BASE_URL, headers } from "../../constant/Api";
 import SearchHotels from "../hotels/SearchHotels";
+import { Link, useParams } from "react-router-dom";
 
 function Hotels() {
   const [hotels, setHotels] = useState([]);
@@ -38,38 +39,45 @@ function Hotels() {
     setFilteredHotels(filteredArray);
   }
 
+  function displayHotelDetails() {
+    return filteredHotels.map(function (hotel) {
+      const href = "/booking/" + hotel.id;
+
+      return (
+        <>
+          <main>
+            <h1>Search holidaze and find the hotel for you!</h1>
+            <SearchHotels doSearch={handleSearch} />
+            <div>
+              {filteredHotels.map((hotel, id) => {
+                return (
+                  <div className="row frame" key={id}>
+                    <div className="col-sm-6">
+                      <h2>{hotel.name}</h2>
+                      <p>{hotel.description}</p>
+                      <p><b>Guest capasity: </b>
+                        {hotel.name} has room for
+                      {hotel.maxGuests} guests.</p>
+                      <p>Prices from: <b>{hotel.price},- </b></p>
+                      <button className="adminbtn"><a href={href}>Book now!</a></button>
+                    </div>
+                    <div className="col-sm-6">
+                      <img className="col" src={hotel.image} alt={hotel.name} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </main>
+        </>
+      );
+    });
+  }
+
   return (
-    <>
-
-      <main>
-        <h1>Search holidaze and find the hotel for you!</h1>
-        <SearchHotels doSearch={handleSearch} />
-        <div>
-          {filteredHotels.map((hotel, index) => {
-            return (
-              <div className="row" key={index}>
-                <div className="col-sm-6">
-                  <h2>{hotel.name}</h2>
-                  <p>{hotel.description}</p>
-                  <p>
-                    <b>Guest capasity: </b>
-                    {hotel.name} has room for
-                      {hotel.maxGuests} guests.
-                                        </p>
-                  <p>
-                    Prices from: <b>{hotel.price},- </b>
-                  </p>
-                </div>
-                <div className="col-sm-6">
-                  <img className="col" src={hotel.image} alt={hotel.name} />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </main>
-
-    </>
+    <div>
+      {displayHotelDetails()}
+    </div>
   );
 }
 

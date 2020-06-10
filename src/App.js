@@ -25,13 +25,14 @@ function App() {
               <Route path="/" exact component={Home} />
               <Route path="/home" component={Home} />
               <Route path="/hotels" component={HotelList} />
-              <Route path="/booking" component={HotelResult} />
+              {/*<Route path="/booking" component={HotelResult} />*/}
               <Route path="/contact" component={Contact} />
               <Route path="/admin" component={Admin} />
               <Route path="/login" component={Login} />
               <Route path="/welcome" component={Welcome} />
               <Route path="/adminuser" component={AdminUser} />
               <Route path="/success" component={Success} />
+              <Route path="/booking/:id" component={HotelResult} />
             </Switch>
           </Router>
         </div>

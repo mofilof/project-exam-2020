@@ -13,7 +13,7 @@ function Menu() {
 
   console.log('After you log out, adminUser has this value: ' + adminUser);
 
-  if (adminUser == 'Admin') {
+  if (adminUser === 'Admin') {
     return (
       <>
         <div className="colorM">
