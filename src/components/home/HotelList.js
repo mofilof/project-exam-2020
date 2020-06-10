@@ -7,6 +7,8 @@ function Hotels() {
   const [hotels, setHotels] = useState([]);
   const [filteredHotels, setFilteredHotels] = useState([]);
 
+
+
   const url = BASE_URL + "establishments";
   const options = { headers };
 

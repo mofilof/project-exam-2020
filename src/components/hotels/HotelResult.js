@@ -28,7 +28,6 @@ function HotelResult() {
   //To get the hotel specifics
   const [hotels, setHotels] = useState([]);
 
-
   const { id } = useParams();
 
   const book = BASE_URL + "establishments" + '/' + id;
@@ -299,7 +298,7 @@ function HotelResult() {
           <div className="col">
 
             <h1>hellå {hotels.name}</h1>
-            <div>{hotels.id}</div>
+            <p>{hotels.description}</p>
 
           </div>
 
