@@ -33,6 +33,18 @@
   text-decoration: underline; 
 }
 
+button{
+  a{
+    color: $white;
+  }
+  a:hover{
+    color: $orange;
+  }
+  a:active{
+    text-decoration: underline;;
+  }
+}
+
 #logout{
   color: $orange;
   border: solid 2px $orange;

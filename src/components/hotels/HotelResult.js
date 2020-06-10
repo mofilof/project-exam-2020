@@ -37,15 +37,11 @@ function HotelResult() {
     fetch(book, options)
       .then((response) => response.json())
       .then((json) => {
-        console.log('Mona vil sove');
         console.table(json);
         setHotels(json);
       })
       .catch((error) => console.log(error));
   }, []);
-
-  //
-
 
   const [rooms, setRooms] = React.useState("");
   const [breakfast, setBreakfast] = React.useState("");
@@ -119,8 +115,11 @@ function HotelResult() {
   return (
     <>
       <main>
-        <div className="row">
-          <div className="col frame">
+        <div className="row hframe">
+          <div className="col">
+            <div className="col">
+              <h4>{hotels.name}</h4>
+            </div>
 
             <form className="col row">
               <div className="col">
@@ -295,11 +294,11 @@ function HotelResult() {
             </div>
           </div>
 
-          <div className="col">
-
-            <h1>hellå {hotels.name}</h1>
-            <p>{hotels.description}</p>
-
+          <div className="col ">
+            <img className="col" src={hotels.image} alt={hotels.name} />
+            <div className="tframe">
+              <p>{hotels.description}</p>
+            </div>
           </div>
 
         </div>
