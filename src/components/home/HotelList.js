@@ -52,7 +52,7 @@ function Hotels() {
                 const href = "/booking/" + hotel.id;
                 return (
                   <div className="row frame" key={id}>
-                    <div className="column">
+                    <div className="col">
                       <h2>{hotel.name}</h2>
                       <p>{hotel.description}</p>
                       <p><b>Guest capasity: </b>
@@ -65,7 +65,6 @@ function Hotels() {
                       <img className="col" src={hotel.image} alt={hotel.name} />
                     </div>
                   </div>
-
                 );
               })}
             </div>

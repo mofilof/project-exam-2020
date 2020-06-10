@@ -13,7 +13,6 @@ function Success() {
     <main>
       <h1>Refrence number:</h1>
       <h2>MØ-{one}-{two}</h2>
-
     </main>
   )
 }

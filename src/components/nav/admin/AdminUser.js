@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function AdminUser() {
   const adminUser = sessionStorage.getItem('adminUser');
@@ -22,7 +23,6 @@ function AdminUser() {
         </div>
       </div>
     ];
-
   console.log(contactFormResults);
 
   //Booking
@@ -40,8 +40,6 @@ function AdminUser() {
 
   const b = ['Rooms: ', 'Breakfast: ', 'Children: ', 'Adults: ', 'Check in date: ', 'Check out date: ', '.'];
 
-
-
   const bookingFormResults =
     [
       <div className="row">
@@ -57,13 +55,16 @@ function AdminUser() {
         </div>
       </div>
     ];
-
   console.log(bookingFormResults);
 
   return (
     <main>
-      <h1>Welcome {adminUser}</h1>
-      <p>Here you have a list of booking and contact.</p>
+      <h1>Welcome back {adminUser}</h1>
+      <p>Here you have a list of booking and contact. Or you can create a new establishment</p>
+
+      <Link to={'/new'}>
+        <button className="adminbtn">New establishment</button>
+      </Link>
 
       <h2>Contact</h2>
       <div className="frame">
@@ -88,8 +89,6 @@ function AdminUser() {
             </>)
         })}
       </div>
-
-
     </main>
   )
 }
