@@ -32,3 +32,14 @@
   border: solid 2px $blue;
   text-decoration: underline; 
 }
+
+#logout{
+  color: $orange;
+  border: solid 2px $orange;
+  background-color: $white; 
+}
+#logout:hover{
+  color: $blue;
+  border: solid 2px $blue;
+  text-decoration: underline; 
+}

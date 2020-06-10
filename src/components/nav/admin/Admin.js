@@ -17,8 +17,7 @@ const Admin = () => {
   };
 
   function adminSubmit() {
-    console.log("Admin submitted");
-    localStorage.setItem("adminUser", adminUser);
+    sessionStorage.setItem("adminUser", adminUser);
     localStorage.setItem("adminPassword", adminPassword);
     window.location.href = '/adminUser';
 
@@ -27,17 +26,31 @@ const Admin = () => {
   return (
     <>
       <main>
-        <div>
-          <h1>Login for Admin users</h1>
-          <input value={adminUser} onChange={onUser} placeholder="Admin username" type="text" />
-          <input placeholder="Password" value={adminPassword} onChange={onPassword} type="password" />
-          <button id="loginButton" className="mybtn" type="submit" onClick={adminSubmit}>
-            Login</button>
+        <div className="column">
+          <div className="col">
+            <h1>Admin login</h1>
+            <p>It is importent that you use <b>Admin</b> ad your user to get to the page for Admin users! </p>
+          </div>
+          <div className="col">
+            <input value={adminUser} onChange={onUser} placeholder="Username is Admin" type="text" />
+          </div>
+          <div className="col">
+            <input placeholder="Type anything" value={adminPassword} onChange={onPassword} type="password" />
+          </div>
+          <div className="col">
+            <button className="mybtn" type="submit" onClick={adminSubmit}>
+              Login</button>
+          </div>
+          <div className="col">
+            <p>Not an Admin user?</p>
+            <Link to={'/login'}>
+              <button className="adminbtn">Back to login</button>
+            </Link>
+          </div>
+
         </div>
 
-        <Link to={'/login'}>
-          <button className="adminbtn">Back to login</button>
-        </Link>
+
 
       </main>
 

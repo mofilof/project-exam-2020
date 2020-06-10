@@ -21,6 +21,10 @@ div{
       color: $white;
       text-decoration: underline;
     }
+    .login:hover{
+      color: $white;
+      text-decoration: underline;
+    }
     #home:active{
       text-decoration: underline;
       color: $orange;
@@ -30,6 +34,10 @@ div{
       color: $orange;
     }
     #contact:active{
+      text-decoration: underline;
+      color: $orange;
+    }
+    .login:active{
       text-decoration: underline;
       color: $orange;
     }
