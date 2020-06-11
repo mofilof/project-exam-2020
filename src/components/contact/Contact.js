@@ -1,25 +1,30 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import Messages from './Messages';
 //import Button from "react-bootstrap/Button";
 //import Form from "react-bootstrap/Form";
 
-const schema = yup.object().shape({
-  fullName: yup.string().required("Your name is required.")
-    .min(2, "Minimum two characters"),
-  email: yup
-    .string()
-    .email("Enter valid email.")
-    .required("We need your email."),
-  textMessage: yup.string().required("Ops, that message is to short.")
-    .min(2, "Minimum two characters.")
-    .max(100, "Maximun 100 characters."),
-});
+
 
 function Contact() {
-  const { register, handleSubmit, errors } = useForm({
-    validationSchema: schema
-  });
+
+
+
+  return (
+    <>
+      <main>
+
+        <Messages />
+
+      </main>
+    </>
+  );
+}
+
+export default Contact;
+
+/*
 
   const [formName, setformNameValue] = React.useState("");
   const [formEmail, setformEmailValue] = React.useState("");
@@ -47,9 +52,9 @@ function Contact() {
     sessionStorage.setItem('formText', formText);
   }
 
-  return (
-    <>
-      <main>
+*/
+
+/*
         <form className="col-sm-6" onSubmit={handleSubmit(onSubmit)}>
 
           <div className="col">
@@ -78,10 +83,4 @@ function Contact() {
           </div>
 
         </form>
-
-      </main>
-    </>
-  );
-}
-
-export default Contact;
+*/

@@ -13,7 +13,7 @@ function Hotels() {
     fetch(url, options)
       .then((response) => response.json())
       .then((json) => {
-        console.log('Hotel')
+        console.log("Hotel");
         console.table(json);
         setHotels(json);
         setFilteredHotels(json);
@@ -40,45 +40,48 @@ function Hotels() {
   }
 
   function displayHotelDetails() {
-    return filteredHotels.map(function (hotel) {
-      return (
-        <>
-          <main>
-            <h1>Search holidaze and find the hotel for you!</h1>
-            <SearchHotels doSearch={handleSearch} />
+    // return filteredHotels.map(function (hotel) {
+    return (
+      <>
+        <main>
+          <h1>Search holidaze and find the hotel for you!</h1>
+          <SearchHotels doSearch={handleSearch} />
 
-            <div>
-              {filteredHotels.map((hotel, id) => {
-                const href = "/booking/" + hotel.id;
-                return (
-                  <div className="row frame" key={id}>
-                    <div className="col">
-                      <h2>{hotel.name}</h2>
-                      <p>{hotel.description}</p>
-                      <p><b>Guest capasity: </b>
-                        {hotel.name} has room for
-                      {hotel.maxGuests} guests.</p>
-                      <p>Prices from: <b>{hotel.price},- </b></p>
-                      <button className="mybtn"><a href={href}>Book now!</a></button>
-                    </div>
-                    <div className="col-sm-6">
-                      <img className="col" src={hotel.image} alt={hotel.name} />
-                    </div>
+          <div>
+            {filteredHotels.map((hotel, id) => {
+              const href = "/booking/" + hotel.id;
+              return (
+                <div className="row frame" key={id}>
+                  <div className="col">
+                    <h2>{hotel.name}</h2>
+                    {hotel.description && <p>{hotel.description}</p>}
+
+                    <p>
+                      <b>Guest capasity: </b>
+                      {hotel.name} has room for
+                                            {hotel.maxGuests} guests.
+                                        </p>
+                    <p>
+                      Prices from: <b>{hotel.price},- </b>
+                    </p>
+                    <button className="mybtn">
+                      <a href={href}>Book now!</a>
+                    </button>
                   </div>
-                );
-              })}
-            </div>
-          </main>
-        </>
-      );
-    });
+                  <div className="col-sm-6">
+                    <img className="col" src={hotel.image} alt={hotel.name} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </main>
+      </>
+    );
+    // });
   }
 
-  return (
-    <div>
-      {displayHotelDetails()}
-    </div>
-  );
+  return <div>{displayHotelDetails()}</div>;
 }
 
 export default Hotels;

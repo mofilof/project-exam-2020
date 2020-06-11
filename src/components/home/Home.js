@@ -40,39 +40,40 @@ function Home() {
   }
 
   function displayHotelDetails() {
-    return filteredHotels.map(function (hotel) {
-      return (
-        <>
-          <main >
-            <h1>Welcome to Holidaze!</h1>
-            <p>We have hotels and establishments for all type of vacations and events. Take a look and book today, we look forward to making your stay a great one.</p>
-            <div className="container">
-              <div className="row">
+
+    return (
+      <>
+        <main >
+          <h1>Welcome to Holidaze!</h1>
+          <p>We have hotels and establishments for all type of vacations and events. Take a look and book today, we look forward to making your stay a great one.</p>
+
+          <div className="row">
+
+            {filteredHotels.map((hotel, index) => {
+              const href = "/booking/" + hotel.id;
+              return (
                 <div className="col-sm-6">
-                  {filteredHotels.map((hotel, index) => {
-                    const href = "/booking/" + hotel.id;
-                    return (
-                      <div key={index.odd}>
-                        <div className="frame">
-                          <div className="col" >
-                            <h4>{hotel.name}</h4>
-                            <p>{hotel.description}</p>
-                            <div>
-                              <img className="col" src={hotel.image} alt={hotel.name} />
-                            </div>
-                            <button className=" mybtn"><a href={href}>Book now!</a></button>
-                          </div>
+                  <div key={index}>
+                    <div className="frame">
+                      <div className="col" >
+                        <h4>{hotel.name}</h4>
+                        <p>{hotel.description}</p>
+                        <div>
+                          <img className="col" src={hotel.image} alt={hotel.name} />
                         </div>
+                        <button className=" mybtn"><a href={href}>Book now!</a></button>
                       </div>
-                    );
-                  })}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </main >
-        </>
-      );
-    });
+              );
+            })}
+
+          </div>
+
+        </main >
+      </>
+    );
   }
 
   return (
