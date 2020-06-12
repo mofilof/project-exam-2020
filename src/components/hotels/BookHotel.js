@@ -1,10 +1,19 @@
-import React from "react";
+import React from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { BASE_URL, headers, POST } from "../../constant/Api";
-import Datepicker from "./DatePicker";
+//import Datepicker from "./DatePicker";
 
+//import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+import CalendarPicker from 'react-native-calendar-picker';
+
+import Component from "./DatePicker";
 
 function Booking() {
   const { register, handleSubmit } = useForm()
@@ -52,7 +61,7 @@ function Booking() {
             <Form.Control name="message" placeholder="Type your message" ref={register} />
           </Form.Group>
 
-          <Datepicker />
+          <Component />
 
           <button className="mybtn" type="submit">
             Book hotel

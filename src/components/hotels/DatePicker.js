@@ -27,6 +27,17 @@ export default class App extends Component {
   render() {
     const { selectedStartDate } = this.state;
     const startDate = selectedStartDate ? selectedStartDate.toString() : '';
+    return (
+      <View style={styles.container}>
+        <CalendarPicker
+          onDateChange={this.onDateChange}
+        />
+
+        <View>
+          <Text>SELECTED DATE:{startDate}</Text>
+        </View>
+      </View>
+    );
   }
 }
 
@@ -38,21 +49,6 @@ const styles = StyleSheet.create({
   },
 });
 
-function Datepicker() {
-  return (
-    <View style={styles.container}>
-      <CalendarPicker
-        onDateChange={this.onDateChange}
-      />
-
-      <View>
-        <Text>SELECTED DATE:{startDate}</Text>
-      </View>
-    </View>
-  );
-}
-
-export default Datepicker;
 
 /*
   class Example extends React.Component {
