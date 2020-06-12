@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BASE_URL, headers } from "../../constant/Api";
+import { NavLink } from "react-router-dom";
 import SearchHotels from "../hotels/SearchHotels";
 
 function Hotels() {
@@ -49,7 +50,7 @@ function Hotels() {
 
           <div>
             {filteredHotels.map((hotel, id) => {
-              const href = "/booking/" + hotel.id;
+              const href = "/bookhotel/" + hotel.id;
               return (
                 <div className="row frame" key={id}>
                   <div className="col">
@@ -59,13 +60,16 @@ function Hotels() {
                     <p>
                       <b>Guest capasity: </b>
                       {hotel.name} has room for {hotel.maxGuests} guests.
-                    </p>
+                                        </p>
                     <p>
                       Prices from: <b>{hotel.price},- </b>
                     </p>
-                    <button className="mybtn">
-                      <a href={href}>Book now!</a>
-                    </button>
+                    <NavLink to={href}>
+                      <button className="mybtn">Book</button>
+                    </NavLink>
+                    {/* <button className="mybtn">
+                                            <a href={href}>Book now!</a>
+                                        </button> */}
                   </div>
                   <div className="col-sm-6">
                     <img className="col" src={hotel.image} alt={hotel.name} />
@@ -84,3 +88,4 @@ function Hotels() {
 }
 
 export default Hotels;
+

@@ -1,23 +1,18 @@
-import React from 'react';
-import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import React from "react";
+import { useForm, Controller } from "react-hook-form";
+import { useHistory, useParams } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { BASE_URL, headers, POST } from "../../constant/Api";
-//import Datepicker from "./DatePicker";
-
-//import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import CalendarPicker from 'react-native-calendar-picker';
-
-import Component from "./DatePicker";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function Booking() {
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, control } = useForm();
   const history = useHistory();
+
+  const { id } = useParams();
+
+  console.log(id);
 
   async function onSubmit(data) {
     console.log("data", data);
@@ -33,10 +28,8 @@ function Booking() {
       console.log(error);
     }
     //Remember that messages need to be a const value in the contact fetch [booking, setBooking]....
-    history.push("/admin/booking");
+    // history.push("/admin/booking");
   }
-
-
 
   return (
     <>
@@ -55,17 +48,39 @@ function Booking() {
             <Form.Control name="email" placeholder="Email adress" ref={register} />
           </Form.Group>
 
-          <Form.Group>
-            <b>Message:</b>
-            <Form.Label>Message</Form.Label>
-            <Form.Control name="message" placeholder="Type your message" ref={register} />
-          </Form.Group>
+          <input type="hidden" name="establishmentId" value={id} ref={register} />
 
-          <Component />
+          <Controller
+            autoComplete="none"
+            as={DatePicker}
+            control={control}
+            valueName="selected"
+            onChange={([selected]) => selected}
+            name="checkIn"
+            className="form-control form-box__datepicker form-box__datepicker--check-in"
+            placeholderText="Select check-in date"
+            isClearable
+            dateFormat="MMMM d yyyy"
+            minDate={new Date()}
+          />
+
+          <Controller
+            autoComplete="none"
+            as={DatePicker}
+            control={control}
+            valueName="selected"
+            onChange={([selected]) => selected}
+            name="checkOut"
+            className="form-control form-box__datepicker form-box__datepicker--check-in"
+            placeholderText="Select check-out date"
+            isClearable
+            dateFormat="MMMM d yyyy"
+            minDate={new Date()}
+          />
 
           <button className="mybtn" type="submit">
             Book hotel
-          </button>
+                    </button>
         </Form>
       </main>
     </>
