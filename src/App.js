@@ -13,6 +13,7 @@ import Welcome from "./components/nav/Welcome";
 import AdminUser from "./components/admin/AdminUser";
 import Success from "./components/contact/Success";
 import NewHotel from "./components/admin/NewHotel";
+import BookHotel from "./components/hotels/BookHotel";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route path="/adminuser" component={AdminUser} />
               <Route path="/success" component={Success} />
               <Route path="/new" component={NewHotel} />
+              <Route path="/bookhotel" component={BookHotel} />
             </Switch>
           </Router>
         </div>

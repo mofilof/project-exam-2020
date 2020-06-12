@@ -58,9 +58,8 @@ function Hotels() {
 
                     <p>
                       <b>Guest capasity: </b>
-                      {hotel.name} has room for
-                                            {hotel.maxGuests} guests.
-                                        </p>
+                      {hotel.name} has room for {hotel.maxGuests} guests.
+                    </p>
                     <p>
                       Prices from: <b>{hotel.price},- </b>
                     </p>
