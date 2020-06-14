@@ -15,10 +15,10 @@ import NewHotel from "./components/admin/NewHotel";
 import BookHotel from "./components/hotels/BookHotel";
 import AdminMessages from "./components/admin/AdminMessages";
 import Booked from "./components/admin/Booked";
+import Footer from "./components/nav/Footer";
 
 function App() {
   return (
-
 
     <section className="bodycolor">
       <Menu />
@@ -40,6 +40,7 @@ function App() {
           <Route path="/booked" component={Booked} />
         </Switch>
       </Router>
+      <Footer />
     </section>
 
 

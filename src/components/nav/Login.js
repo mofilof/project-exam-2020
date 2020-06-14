@@ -15,7 +15,10 @@ const schema = yup.object().shape({
 });
 
 const Login = () => {
-  const { register, errors } = useForm({ validationSchema: schema });
+  const { register, errors } = useForm({
+    validationSchema: schema
+  });
+
   const [nameValue, setNameValue] = React.useState("");
   const [password, setPassword] = React.useState("");
 
@@ -34,7 +37,6 @@ const Login = () => {
     if (errors === false) {
       window.location.href = '/welcome';
     }
-
 
   }
 

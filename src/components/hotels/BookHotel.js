@@ -43,7 +43,7 @@ function Booking() {
     } catch (error) {
       console.log(error);
     }
-
+    history.push("/success");
   }
 
 

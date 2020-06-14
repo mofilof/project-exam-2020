@@ -1,32 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
-h1, h2, h3, h4, h5, h6, p {
+h1 {
+  font-size: 2em;
   font-family: "Work Sans", sans-serif;
   color: #0077a4;
 }
 
-h1 {
-  font-size: 2em;
-}
-
 h2 {
   font-size: 1.6em;
+  font-family: "Work Sans", sans-serif;
+  color: #0077a4;
 }
 
 h3 {
   font-size: 1.2em;
+  font-family: "Work Sans", sans-serif;
+  color: #0077a4;
 }
 
 h4 {
   font-size: 1em;
+  font-family: "Work Sans", sans-serif;
+  color: #0077a4;
 }
 
 p {
   font-size: 0.8em;
+  font-family: "Work Sans", sans-serif;
+  color: #0077a4;
+}
+
+b {
+  font-family: "Work Sans", sans-serif;
+  color: #0077a4;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.errorMessage {
+  color: #d63c0e;
 }
 
 div {
   text-decoration: none;
   color: #ffffff;
+  margin: 0;
 }
 div .colorM {
   background-color: #0077a4;
@@ -36,6 +53,7 @@ div .colorM div {
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
   text-decoration: none;
+  font-size: 1.1em;
 }
 div .colorM #home:hover {
   color: #ffffff;
@@ -49,6 +67,10 @@ div .colorM #contact:hover {
   color: #ffffff;
   text-decoration: underline;
 }
+div .colorM .login:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
 div .colorM #home:active {
   text-decoration: underline;
   color: #e88c27;
@@ -58,6 +80,10 @@ div .colorM #hotels:active {
   color: #e88c27;
 }
 div .colorM #contact:active {
+  text-decoration: underline;
+  color: #e88c27;
+}
+div .colorM .login:active {
   text-decoration: underline;
   color: #e88c27;
 }
@@ -87,6 +113,12 @@ div .colorM #contact:active {
   text-decoration: underline;
 }
 
+.holidaze {
+  height: 2.5em;
+  padding: 2em, 0;
+  margin: 0;
+}
+
 .search {
   color: #0077a4;
   border: solid 1px #0077a4;
@@ -106,7 +138,7 @@ div .colorM #contact:active {
 }
 
 .mybtn:hover {
-  color: #e88c27;
+  color: #0077a4;
   border: solid 2px #e88c27;
   background-color: #ffffff;
 }
@@ -123,11 +155,42 @@ div .colorM #contact:active {
   text-decoration: underline;
 }
 
+button a {
+  color: #ffffff;
+}
+button a:hover {
+  color: #e88c27;
+}
+button a:active {
+  text-decoration: underline;
+}
+
+#logout {
+  color: #0077a4;
+  border: solid 2px #e88c27;
+  background-color: #ffffff;
+}
+
+#logout:hover {
+  color: #0077a4;
+  border: solid 2px #0077a4;
+  text-decoration: underline;
+}
+
+.footer {
+  background-color: #0077a4;
+}
+
+.footerLogo {
+  height: 6em;
+}
+
 main {
   margin: 0 10%;
   background-color: #ffffff;
   padding: 2% 4%;
   border: solid 3px #0077a4;
+  min-height: 900px;
 }
 
 .bodycolor {
@@ -136,6 +199,37 @@ main {
 
 body {
   min-height: 900px;
+}
+
+.frame {
+  margin: 1em 0;
+  padding: 1em;
+  border: solid 3px #0077a4;
+}
+
+.tframe {
+  padding: 2em;
+}
+
+.hframe {
+  margin: 1em;
+  padding: 2em 1em;
+  border: solid 3px #0077a4;
+}
+
+.dtg {
+  padding: 0.4em;
+  margin: 0.5em 1em 1em 0;
+}
+
+div input {
+  margin: 0.5em 0em;
+}
+div button {
+  margin: 0.5em 0em;
+}
+div textarea {
+  margin: 0.5em 0em;
 }
 
 /*# sourceMappingURL=App.css.map */

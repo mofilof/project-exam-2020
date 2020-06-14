@@ -1,6 +1,7 @@
 div{
   text-decoration: none;
   color: $white;
+  margin: 0;
   .colorM{
     background-color: $blue;
     text-decoration: none;
@@ -8,6 +9,7 @@ div{
       font-family: $worksans;
       font-weight: 600;
       text-decoration: none;
+      font-size: 1.1em;
     }
     #home:hover{
       color: $white;
@@ -69,3 +71,9 @@ div{
   text-decoration: underline;
 }
 
+.holidaze{
+  height: 2.5em;
+  padding: 2em, 0;
+  margin: 0;
+ }
+ 

@@ -3,6 +3,7 @@
 @import "partials/_text.scss";
 @import "partials/_menu.scss";
 @import "partials/_buttons.scss";
+@import "partials/footer.scss";
 
 
 main{
@@ -10,6 +11,7 @@ main{
   background-color: $white;
   padding: 2% 4%;
   border: solid 3px $blue;
+  min-height: 900px ;
 }
 
 .bodycolor{
@@ -51,4 +53,3 @@ div{
     margin: 0.5em 0em ;
   }
 }
-

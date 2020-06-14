@@ -43,7 +43,7 @@ function NewHotel() {
       console.log(error);
     }
 
-    history.push("/contact/success");
+    history.push("/adminuser");
   }
 
   return (
