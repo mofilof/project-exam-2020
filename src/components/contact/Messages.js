@@ -3,10 +3,26 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { BASE_URL, headers, POST } from "../../constant/Api";
+import * as yup from "yup";
 
+const schema = yup.object().shape({
+  name: yup.string()
+    .required("Your name is required.")
+    .min(2, "Minimum two characters"),
+  email: yup
+    .string()
+    .email("Enter valid email.")
+    .required("We need your email."),
+  message: yup
+    .string()
+    .min(10, "Minimum ten characters")
+    .required("You forgot to type in your question."),
+});
 
 function Messages() {
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, errors } = useForm({
+    validationSchema: schema
+  })
 
   const history = useHistory();
 
@@ -37,18 +53,21 @@ function Messages() {
             <b>Full name:</b>
             <Form.Label>Name</Form.Label>
             <Form.Control name="name" placeholder="Full name" ref={register} />
+            {errors.name && <p className="errorMessage">{errors.name.message}</p>}
           </Form.Group>
 
           <Form.Group>
             <b>Email adress:</b>
             <Form.Label>Email adress</Form.Label>
             <Form.Control name="email" placeholder="Email adress" ref={register} />
+            {errors.email && <p className="errorMessage">{errors.email.message}</p>}
           </Form.Group>
 
           <Form.Group>
             <b>Message:</b>
             <Form.Label>Message</Form.Label>
             <Form.Control name="message" placeholder="Type your message" ref={register} />
+            {errors.message && <p className="errorMessage">{errors.message.message}</p>}
           </Form.Group>
 
           <button className="mybtn" type="submit" >

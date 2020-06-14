@@ -26,8 +26,7 @@ function Booking() {
     validationSchema: schema
   });
 
-  const { index } = useParams();
-
+  const { id } = useParams();
   const history = useHistory();
 
 
@@ -56,20 +55,22 @@ function Booking() {
           <section className="frame col">
 
             <h1>Book your hotel now!</h1>
-            <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form method="POST" onSubmit={handleSubmit(onSubmit)}>
               <Form.Group>
                 <b>Full name:</b>
                 <Form.Label>Name</Form.Label>
                 <Form.Control name="name" placeholder="Full name" ref={register} />
+                {errors.name && <p className="errorMessage">{errors.name.message}</p>}
               </Form.Group>
 
               <Form.Group>
                 <b>Email adress:</b>
                 <Form.Label>Email adress</Form.Label>
                 <Form.Control name="email" placeholder="Email adress" ref={register} />
+                {errors.email && <p className="errorMessage">{errors.email.message}</p>}
               </Form.Group>
 
-              <input type="hidden" name="establishmentId" value={index} ref={register} />
+              <input type="hidden" name="establishmentId" value={id} ref={register} />
 
               <b>Check in date:</b>
               <Form.Group>
@@ -87,6 +88,7 @@ function Booking() {
                   minDate={new Date()}
                   ref={register}
                 />
+                {errors.checkIn && <p className="errorMessage">{errors.checkIn.message}</p>}
               </Form.Group>
 
               <b>Check out date:</b>
@@ -105,6 +107,7 @@ function Booking() {
                   minDate={new Date()}
                   ref={register}
                 />
+                {errors.checkOut && <p className="errorMessage">{errors.checkOut.message}</p>}
               </Form.Group>
 
 
