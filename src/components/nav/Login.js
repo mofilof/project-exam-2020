@@ -1,7 +1,22 @@
-import React, {/* useRef */ } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import Form from "react-bootstrap/Form";
+
+const schema = yup.object().shape({
+  name: yup.string()
+    .required("Your name is required.")
+    .matches(/(Admin|admin)/),
+  password: yup
+    .string()
+    .required("You need a password to login")
+    .min(6, "Minimum six characters"),
+
+});
 
 const Login = () => {
+  const { register, errors } = useForm({ validationSchema: schema });
   const [nameValue, setNameValue] = React.useState("");
   const [password, setPassword] = React.useState("");
 
@@ -17,34 +32,43 @@ const Login = () => {
     console.log("form submitted");
     localStorage.setItem("username", nameValue);
     localStorage.setItem("password", password);
-    window.location.href = '/welcome';
+    if (errors = true) {
+      window.location.href = '/welcome';
+    }
+
 
   }
 
   return (
     <>
       <main>
-        <div className="column">
+        <Form >
           <div className="col">
             <h1>Login</h1>
             <p>You can use whatever username and password you want to test the login.</p>
           </div>
+
+
+
+
           <div className="col">
-            <input value={nameValue} onChange={onChange} placeholder="Username" type="text" />
+            <input name="name" value={nameValue} onChange={onChange} placeholder="Username" type="text" ref={register} />
+            {errors.name && <p className="errorMessage">{errors.name.message}</p>}
           </div>
           <div className="col">
-            <input placeholder="Password" value={password} onChange={onChangePassword} type="password" />
+            <input name="password" placeholder="Password" value={password} onChange={onChangePassword} type="password" ref={register} />
+            {errors.password && <p className="errorMessage">{errors.password.message}</p>}
           </div>
           <div className="col">
-            <button id="loginButton" className="mybtn" type="submit" onClick={submitted}>Login</button>
+            <button id="loginButton" className="mybtn" type="submit" onClick={submitted} >Login</button>
           </div>
           <div className="col">
             <p>Are you an Admin user?</p>
-            <Link to={'/admin'}>
+            <NavLink to={'/admin'}>
               <button className="adminbtn">Go to admin login</button>
-            </Link>
+            </NavLink>
           </div>
-        </div>
+        </Form>
       </main>
 
     </>

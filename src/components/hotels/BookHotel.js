@@ -5,13 +5,29 @@ import Form from "react-bootstrap/Form";
 import { BASE_URL, headers, POST } from "../../constant/Api";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  name: yup.string()
+    .required("Your name is required.")
+    .min(2, "Minimum two characters"),
+  email: yup
+    .string()
+    .email("Enter valid email.")
+    .required("We need your email."),
+  checkIn: yup.date()
+    .required("Ops, when will you check in?"),
+  checkOut: yup.date()
+    .required("No check out? Are you moving in permanently?")
+});
 
 function Booking() {
-  const { register, handleSubmit, control } = useForm();
+  const { register, handleSubmit, control, errors } = useForm({
+    validationSchema: schema
+  });
   const history = useHistory();
 
   const { id } = useParams();
-
   console.log(id);
 
   async function onSubmit(data) {
@@ -27,8 +43,8 @@ function Booking() {
     } catch (error) {
       console.log(error);
     }
-    //Remember that messages need to be a const value in the contact fetch [booking, setBooking]....
-    // history.push("/admin/booking");
+
+    history.push('/success');
   }
 
   return (
@@ -40,12 +56,14 @@ function Booking() {
             <b>Full name:</b>
             <Form.Label>Name</Form.Label>
             <Form.Control name="name" placeholder="Full name" ref={register} />
+            {errors.name && <p className="errorMessage">{errors.name.message}</p>}
           </Form.Group>
 
           <Form.Group>
             <b>Email adress:</b>
             <Form.Label>Email adress</Form.Label>
             <Form.Control name="email" placeholder="Email adress" ref={register} />
+            {errors.email && <p className="errorMessage">{errors.email.message}</p>}
           </Form.Group>
 
           <input type="hidden" name="establishmentId" value={id} ref={register} />
@@ -63,6 +81,7 @@ function Booking() {
             dateFormat="MMMM d yyyy"
             minDate={new Date()}
           />
+          {errors.checkOut && <p className="errorMessage">{errors.checkOut.message}</p>}
 
           <Controller
             autoComplete="none"
@@ -77,10 +96,11 @@ function Booking() {
             dateFormat="MMMM d yyyy"
             minDate={new Date()}
           />
+          {errors.checkIn && <p className="errorMessage">{errors.checkIn.message}</p>}
 
           <button className="mybtn" type="submit">
             Book hotel
-                    </button>
+          </button>
         </Form>
       </main>
     </>

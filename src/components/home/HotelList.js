@@ -48,7 +48,7 @@ function Hotels() {
           <h1>Search holidaze and find the hotel for you!</h1>
           <SearchHotels doSearch={handleSearch} />
 
-          <div>
+          <section>
             {filteredHotels.map((hotel, id) => {
               const href = "/bookhotel/" + hotel.id;
               return (
@@ -65,11 +65,8 @@ function Hotels() {
                       Prices from: <b>{hotel.price},- </b>
                     </p>
                     <NavLink to={href}>
-                      <button className="mybtn">Book</button>
+                      <button className="mybtn">Book now!</button>
                     </NavLink>
-                    {/* <button className="mybtn">
-                                            <a href={href}>Book now!</a>
-                                        </button> */}
                   </div>
                   <div className="col-sm-6">
                     <img className="col" src={hotel.image} alt={hotel.name} />
@@ -77,7 +74,7 @@ function Hotels() {
                 </div>
               );
             })}
-          </div>
+          </section>
         </main>
       </>
     );
