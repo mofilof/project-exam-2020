@@ -8,7 +8,6 @@ import Contact from "./components/contact/Contact";
 import Menu from "./components/nav/Menu";
 import Login from "./components/nav/Login";
 import Admin from "./components/admin/Admin";
-import HotelResult from "./components/hotels/HotelResult";
 import Welcome from "./components/nav/Welcome";
 import AdminUser from "./components/admin/AdminUser";
 import Success from "./components/contact/Success";
@@ -17,29 +16,30 @@ import BookHotel from "./components/hotels/BookHotel";
 
 function App() {
   return (
-    <>
-      <body className="bodycolor">
-        <Menu />
-        <div>
-          <Router>
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/home" component={Home} />
-              <Route path="/hotels" component={HotelList} />
-              <Route path="/booking/:id" component={HotelResult} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/admin" component={Admin} />
-              <Route path="/login" component={Login} />
-              <Route path="/welcome" component={Welcome} />
-              <Route path="/adminuser" component={AdminUser} />
-              <Route path="/success" component={Success} />
-              <Route path="/new" component={NewHotel} />
-              <Route path="/bookhotel" component={BookHotel} />
-            </Switch>
-          </Router>
-        </div>
-      </body>
-    </>
+
+
+    <section className="bodycolor">
+      <Menu />
+
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/home" component={Home} />
+          <Route path="/hotels" component={HotelList} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/admin" component={Admin} />
+          <Route path="/login" component={Login} />
+          <Route path="/welcome" component={Welcome} />
+          <Route path="/adminuser" component={AdminUser} />
+          <Route path="/success" component={Success} />
+          <Route path="/new" component={NewHotel} />
+          <Route path="/bookhotel" component={BookHotel} />
+        </Switch>
+      </Router>
+    </section>
+
+
+
   );
 }
 

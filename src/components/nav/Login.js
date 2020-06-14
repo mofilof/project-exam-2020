@@ -32,7 +32,7 @@ const Login = () => {
     console.log("form submitted");
     localStorage.setItem("username", nameValue);
     localStorage.setItem("password", password);
-    if (errors = true) {
+    if (errors === false) {
       window.location.href = '/welcome';
     }
 
@@ -47,9 +47,6 @@ const Login = () => {
             <h1>Login</h1>
             <p>You can use whatever username and password you want to test the login.</p>
           </div>
-
-
-
 
           <div className="col">
             <input name="name" value={nameValue} onChange={onChange} placeholder="Username" type="text" ref={register} />

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BASE_URL, headers } from "../../constant/Api";
-import { NavLink } from "react-router-dom";
-import SearchHotels from "../hotels/SearchHotels";
 
 function Hotels() {
   const [messages, setMessages] = useState([]);
@@ -18,7 +16,7 @@ function Hotels() {
         setMessages(json);
       })
       .catch((error) => console.log(error));
-  }, []);
+  });
 
   function displayHotelDetails() {
     return (

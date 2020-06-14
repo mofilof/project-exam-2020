@@ -30,7 +30,7 @@ function NewHotel() {
     <>
       <main>
         <section className="frame ">
-          <h1>Create establishment</h1>
+
           <section className="row">
             <Link className="col" to={'/booked'}>
               <button className="adminbtn col">Customer Bookings</button>
@@ -43,6 +43,7 @@ function NewHotel() {
             </Link>
           </section>
 
+          <h1>Create establishment</h1>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group>
               <b>Name of establishment:</b>
