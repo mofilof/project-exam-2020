@@ -20,7 +20,7 @@ function Hotels() {
         setFilteredHotels(json);
       })
       .catch((error) => console.log(error));
-  });
+  }, []);
 
   function handleSearch(inputValue) {
     console.log("Inputvalue: ", inputValue);

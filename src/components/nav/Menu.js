@@ -21,7 +21,7 @@ function Menu() {
 
           <Navbar>
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav.Link className="" href="/">
+              <Nav.Link href="/">
                 <img className="holidaze" src={HolidazeLogo} />
               </Nav.Link>
               <Nav className="col text-left">

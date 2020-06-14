@@ -16,7 +16,7 @@ function Home() {
         setFilteredHotels(json);
       })
       .catch((error) => console.log(error));
-  });
+  }, []);
 
   return (
     <>
@@ -26,11 +26,11 @@ function Home() {
 
         <div className="row">
 
-          {filteredHotels.map((hotel, index) => {
+          {filteredHotels.map((hotel, id) => {
             const href = "/bookhotel/" + hotel.id;
             return (
-              <div className="col-sm-6">
-                <div key={index}>
+              <div className="col-sm-6" key={id}>
+                <div>
                   <div className="frame">
                     <div className="col" >
                       <h4>{hotel.name}</h4>
