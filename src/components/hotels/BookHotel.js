@@ -15,10 +15,12 @@ const schema = yup.object().shape({
     .string()
     .email("Enter valid email.")
     .required("We need your email."),
-  checkIn: yup.date()
+  checkIn: yup
+    .date()
     .required("Ops, when will you check in?"),
-  checkOut: yup.date()
-    .required("No check out? Are you moving in permanently?")
+  checkOut: yup
+    .date()
+    .required("No check out? Are you moving in permanently?"),
 });
 
 function Booking() {
@@ -30,12 +32,13 @@ function Booking() {
   const history = useHistory();
 
 
-  async function onSubmit(bookdata) {
-    console.log("bookdata", bookdata);
+  async function onSubmit(data) {
+    console.log("data", data);
 
     const url = BASE_URL + "enquiries";
     console.log(url);
-    const options = { headers, method: POST, body: JSON.stringify(bookdata) };
+
+    const options = { headers, method: POST, body: JSON.stringify(data) };
 
     try {
       const response = await fetch(url, options);
@@ -43,7 +46,7 @@ function Booking() {
     } catch (error) {
       console.log(error);
     }
-    history.push("/success");
+    history.push('/success');
   }
 
 
@@ -70,7 +73,7 @@ function Booking() {
                 {errors.email && <p className="errorMessage">{errors.email.message}</p>}
               </Form.Group>
 
-              <input type="hidden" name="establishmentId" value={id} ref={register} />
+              <input type="hidden" name="establishment" value={id} ref={register} />
 
               <b>Check in date:</b>
               <Form.Group>
@@ -84,12 +87,12 @@ function Booking() {
                   className="form-control form-box__datepicker form-box__datepicker--check-in"
                   placeholderText="Select check-in date"
                   isClearable
-                  dateFormat="MMMM d yyyy"
+                  dateFormat="MM dd yyyy"
                   minDate={new Date()}
                   ref={register}
                 />
                 {errors.checkIn && <p className="errorMessage">{errors.checkIn.message}</p>}
-              </Form.Group>
+              </Form.Group >
 
               <b>Check out date:</b>
               <Form.Group>
@@ -103,7 +106,7 @@ function Booking() {
                   className="form-control form-box__datepicker form-box__datepicker--check-in"
                   placeholderText="Select check-out date"
                   isClearable
-                  dateFormat="MMMM d yyyy"
+                  dateFormat="MM dd yyyy"
                   minDate={new Date()}
                   ref={register}
                 />
