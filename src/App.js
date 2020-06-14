@@ -13,6 +13,8 @@ import AdminUser from "./components/admin/AdminUser";
 import Success from "./components/contact/Success";
 import NewHotel from "./components/admin/NewHotel";
 import BookHotel from "./components/hotels/BookHotel";
+import AdminMessages from "./components/admin/AdminMessages";
+import Booked from "./components/admin/Booked";
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
           <Route path="/success" component={Success} />
           <Route path="/new" component={NewHotel} />
           <Route path="/bookhotel" component={BookHotel} />
+          <Route path="/adminmessages" component={AdminMessages} />
+          <Route path="/booked" component={Booked} />
         </Switch>
       </Router>
     </section>

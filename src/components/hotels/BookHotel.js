@@ -25,17 +25,18 @@ function Booking() {
   const { register, handleSubmit, control, errors } = useForm({
     validationSchema: schema
   });
+
+  const { index } = useParams();
+
   const history = useHistory();
 
-  const { id } = useParams();
-  console.log(id);
 
-  async function onSubmit(data) {
-    console.log("data", data);
+  async function onSubmit(bookdata) {
+    console.log("bookdata", bookdata);
 
     const url = BASE_URL + "enquiries";
     console.log(url);
-    const options = { headers, method: POST, body: JSON.stringify(data) };
+    const options = { headers, method: POST, body: JSON.stringify(bookdata) };
 
     try {
       const response = await fetch(url, options);
@@ -44,64 +45,79 @@ function Booking() {
       console.log(error);
     }
 
-    history.push('/success');
   }
+
 
   return (
     <>
       <main>
-        <h1>Book your hotel now!</h1>
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <Form.Group>
-            <b>Full name:</b>
-            <Form.Label>Name</Form.Label>
-            <Form.Control name="name" placeholder="Full name" ref={register} />
-            {errors.name && <p className="errorMessage">{errors.name.message}</p>}
-          </Form.Group>
 
-          <Form.Group>
-            <b>Email adress:</b>
-            <Form.Label>Email adress</Form.Label>
-            <Form.Control name="email" placeholder="Email adress" ref={register} />
-            {errors.email && <p className="errorMessage">{errors.email.message}</p>}
-          </Form.Group>
+        <section className="row">
+          <section className="frame col">
 
-          <input type="hidden" name="establishmentId" value={id} ref={register} />
+            <h1>Book your hotel now!</h1>
+            <Form onSubmit={handleSubmit(onSubmit)}>
+              <Form.Group>
+                <b>Full name:</b>
+                <Form.Label>Name</Form.Label>
+                <Form.Control name="name" placeholder="Full name" ref={register} />
+              </Form.Group>
 
-          <Controller
-            autoComplete="none"
-            as={DatePicker}
-            control={control}
-            valueName="selected"
-            onChange={([selected]) => selected}
-            name="checkIn"
-            className="form-control form-box__datepicker form-box__datepicker--check-in"
-            placeholderText="Select check-in date"
-            isClearable
-            dateFormat="MMMM d yyyy"
-            minDate={new Date()}
-          />
-          {errors.checkOut && <p className="errorMessage">{errors.checkOut.message}</p>}
+              <Form.Group>
+                <b>Email adress:</b>
+                <Form.Label>Email adress</Form.Label>
+                <Form.Control name="email" placeholder="Email adress" ref={register} />
+              </Form.Group>
 
-          <Controller
-            autoComplete="none"
-            as={DatePicker}
-            control={control}
-            valueName="selected"
-            onChange={([selected]) => selected}
-            name="checkOut"
-            className="form-control form-box__datepicker form-box__datepicker--check-in"
-            placeholderText="Select check-out date"
-            isClearable
-            dateFormat="MMMM d yyyy"
-            minDate={new Date()}
-          />
-          {errors.checkIn && <p className="errorMessage">{errors.checkIn.message}</p>}
+              <input type="hidden" name="establishmentId" value={index} ref={register} />
 
-          <button className="mybtn" type="submit">
-            Book hotel
-          </button>
-        </Form>
+              <b>Check in date:</b>
+              <Form.Group>
+                <Controller
+                  autoComplete="none"
+                  as={DatePicker}
+                  control={control}
+                  valueName="selected"
+                  onChange={([selected]) => selected}
+                  name="checkIn"
+                  className="form-control form-box__datepicker form-box__datepicker--check-in"
+                  placeholderText="Select check-in date"
+                  isClearable
+                  dateFormat="MMMM d yyyy"
+                  minDate={new Date()}
+                  ref={register}
+                />
+              </Form.Group>
+
+              <b>Check out date:</b>
+              <Form.Group>
+                <Controller
+                  autoComplete="none"
+                  as={DatePicker}
+                  control={control}
+                  valueName="selected"
+                  onChange={([selected]) => selected}
+                  name="checkOut"
+                  className="form-control form-box__datepicker form-box__datepicker--check-in"
+                  placeholderText="Select check-out date"
+                  isClearable
+                  dateFormat="MMMM d yyyy"
+                  minDate={new Date()}
+                  ref={register}
+                />
+              </Form.Group>
+
+
+              <button className="mybtn" type="submit">
+                Book hotel
+              </button>
+            </Form>
+          </section>
+
+
+        </section>
+
+
       </main>
     </>
   );

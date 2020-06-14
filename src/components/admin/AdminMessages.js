@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BASE_URL, headers } from "../../constant/Api";
+import { Link } from "react-router-dom";
 
-function Hotels() {
+function AdminMessages() {
   const [messages, setMessages] = useState([]);
 
   const url = BASE_URL + "contacts";
@@ -16,35 +17,52 @@ function Hotels() {
         setMessages(json);
       })
       .catch((error) => console.log(error));
-  });
+  }, []);
 
-  function displayHotelDetails() {
+  function displayMessages() {
     return (
 
+      <main>
 
-      <div>
-        {messages.map((contact, id) => {
-          return (
-            <section className="frame row" key={id}>
-              <div className="col">
-                <p><b>Name: </b>{contact.name}</p>
-                <p><b>Email: </b>{contact.email}</p>
-              </div>
-              <div className="col"><p><b>Message: </b>{contact.message}</p></div>
-            </section>
-          )
-        })}
-      </div>
+        <section className="row">
+          <Link className="col" to={'/booked'}>
+            <button className="mybtn col">Customer Bookings</button>
+          </Link>
+          <Link className="col" to={'/adminmessages'}>
+            <button className="adminbtn col">Customer Messages</button>
+          </Link>
+          <Link className="col" to={'/new'}>
+            <button className="mybtn col">New establishment</button>
+          </Link>
+        </section>
+
+        <h1>Customer Messages:</h1>
+
+        <div>
+          {messages.map((contact, id) => {
+            return (
+              <section className="frame row" key={id}>
+                <div className="col">
+                  <p><b>Name: </b>{contact.name}</p>
+                  <p><b>Email: </b>{contact.email}</p>
+                </div>
+                <div className="col"><p><b>Message: </b>{contact.message}</p></div>
+              </section>
+            )
+          })}
+        </div>
+
+      </main>
 
 
     );
 
   }
 
-  return <div>{displayHotelDetails()}</div>;
+  return <div>{displayMessages()}</div>;
 }
 
-export default Hotels;
+export default AdminMessages;
 
 
 
