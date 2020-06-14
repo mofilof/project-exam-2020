@@ -15,6 +15,7 @@ function Messages() {
 
     const url = BASE_URL + "contacts";
     console.log(url);
+
     const options = { headers, method: POST, body: JSON.stringify(data) };
 
     try {
@@ -23,7 +24,6 @@ function Messages() {
     } catch (error) {
       console.log(error);
     }
-    //Remember that messages need to be a const value in the contact fetch [messages, setMessages]....
     history.push('/success');
   }
 
@@ -32,7 +32,7 @@ function Messages() {
       <main>
         <h1>Send us a message</h1>
         <p>Send us your questions or feedback. We appriciate your feedback, good or bad. We always strive to be better and make all our customers satisfied. We will answer your message as soon as we can.</p>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form method="POST" onSubmit={handleSubmit(onSubmit)}>
           <Form.Group>
             <b>Full name:</b>
             <Form.Label>Name</Form.Label>
@@ -48,10 +48,10 @@ function Messages() {
           <Form.Group>
             <b>Message:</b>
             <Form.Label>Message</Form.Label>
-            <Form.Control name="tmessage" placeholder="Type your message" ref={register} />
+            <Form.Control name="message" placeholder="Type your message" ref={register} />
           </Form.Group>
 
-          <button className="mybtn" type="submit" onSubmit={handleSubmit()}>
+          <button className="mybtn" type="submit" >
             Send message
           </button>
         </Form>

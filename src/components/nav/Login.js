@@ -7,9 +7,8 @@ import Form from "react-bootstrap/Form";
 const schema = yup.object().shape({
   name: yup.string()
     .required("Your name is required.")
-    .matches(/(Admin|admin)/),
-  password: yup
-    .string()
+    .min(5, "Minimum six characters"),
+  password: yup.string()
     .required("You need a password to login")
     .min(6, "Minimum six characters"),
 
